@@ -1,0 +1,7 @@
+apply plugin: 'com.android.library'
+apply from: '../android_common.gradle'
+
+dependencies {
+    implementation AndroidLibraries.appCompat
+    implementation AndroidLibraries.material
+}

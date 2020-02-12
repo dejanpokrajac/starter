@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+apply from: '../android_common.gradle'
+
+android {
+    defaultConfig {
+        applicationId AppConfig.applicationId
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    dataBinding {
+        enabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(Modules.common)
+    implementation project(Modules.remote)
+    implementation project(Modules.local)
+    implementation project(Modules.repository)
+
+    implementation KotlinLibraries.kotlin
+
+    implementation AndroidLibraries.appCompat
+    implementation AndroidLibraries.coreKtx
+    implementation AndroidLibraries.material
+    implementation AndroidLibraries.constraintLayout
+    implementation AndroidLibraries.lifecycleExtensions
+    implementation AndroidLibraries.lifecycle
+    implementation AndroidLibraries.livedataKtx
+    implementation AndroidLibraries.viewmodelKtx
+    implementation AndroidLibraries.navigationFragment
+    implementation AndroidLibraries.navigation
+    implementation AndroidLibraries.navigationFragmentKtx
+    implementation AndroidLibraries.navigationKtx
+
+    implementation Libraries.koin
+    implementation Libraries.koinViewModel
+
+    testImplementation TestLibraries.junit
+    androidTestImplementation TestLibraries.androidJunit
+    androidTestImplementation TestLibraries.espresso
+}

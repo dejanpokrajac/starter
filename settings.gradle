@@ -1,0 +1,2 @@
+include ':app', ':common', ':data:remote', ':data:model', ':data:repository', ':data:local'
+rootProject.name='Starter'

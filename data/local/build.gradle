@@ -1,0 +1,25 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-kapt'
+apply from: '../../android_common.gradle'
+
+android {
+    defaultConfig {
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+}
+
+dependencies {
+    kapt Libraries.roomCompiler
+
+    implementation Libraries.roomRunTime
+    implementation Libraries.roomKtx
+    implementation AndroidLibraries.lifecycleExtensions
+
+    implementation project(Modules.model)
+
+    implementation Libraries.koin
+    implementation Libraries.koinViewModel
+
+    androidTestImplementation TestLibraries.junit
+    androidTestImplementation TestLibraries.koin
+}

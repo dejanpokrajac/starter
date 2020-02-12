@@ -12,14 +12,9 @@
         tools:layout="@layout/fragment_repos" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.sample.starter.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_user"
+        android:name="com.sample.features.user.UserFragment"
+        android:label="@string/title_user"
+        tools:layout="@layout/fragment_user" />
 
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.sample.starter.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
 </navigation>

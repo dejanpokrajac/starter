@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+                name="viewmodel"
+                type="com.sample.features.user.UserViewModel"/>
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/fragment_detail_root_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:showWhenLoading="@{viewmodel.isLoading}"
+            app:onRefreshListener="@{() -> viewmodel.onRefresh()}">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <ImageView
+                    android:id="@+id/ivBackground"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/bg_user"/>
+
+            <ImageView
+                    android:id="@+id/fragment_detail_avatar"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground"
+                    app:imageUrlRounded="@{viewmodel.user.avatarUrl}"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivBackground"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivBackground"/>
+
+            <TextView
+                    android:id="@+id/fragment_detail_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:textSize="18sp"
+                    android:text="@{viewmodel.user.name}"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivName"
+                    app:layout_constraintStart_toEndOf="@+id/ivName"
+                    app:layout_constraintTop_toTopOf="@+id/ivName"/>
+
+            <ImageView
+                    android:id="@+id/ivName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="24dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fragment_detail_avatar"
+                    app:srcCompat="@drawable/ic_name_black_24dp"/>
+
+            <ImageView
+                    android:id="@+id/ivCompany"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="24dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivName"
+                    app:srcCompat="@drawable/ic_company_black_24dp"/>
+
+            <TextView
+                    android:id="@+id/fragment_detail_company"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@{viewmodel.user.company}"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivCompany"
+                    app:layout_constraintStart_toEndOf="@+id/ivCompany"
+                    app:layout_constraintTop_toTopOf="@+id/ivCompany"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

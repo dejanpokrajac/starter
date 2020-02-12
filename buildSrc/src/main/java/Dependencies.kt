@@ -13,6 +13,7 @@ object Modules {
     val repository = ":data:repository"
 
     val featureRepos = ":features:repos"
+    val featureUser = ":features:user"
 }
 
 object Versions {

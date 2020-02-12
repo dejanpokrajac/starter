@@ -37,6 +37,7 @@ dependencies {
     implementation project(Modules.repository)
 
     implementation project(Modules.featureRepos)
+    implementation project(Modules.featureUser)
 
     implementation KotlinLibraries.kotlin
 

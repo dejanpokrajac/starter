@@ -36,6 +36,8 @@ dependencies {
     implementation project(Modules.local)
     implementation project(Modules.repository)
 
+    implementation project(Modules.featureRepos)
+
     implementation KotlinLibraries.kotlin
 
     implementation AndroidLibraries.appCompat

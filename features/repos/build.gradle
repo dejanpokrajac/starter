@@ -1,0 +1,15 @@
+apply plugin: 'kotlin-kapt'
+apply from: '../../android_feature_dependencies.gradle'
+
+android {
+    dataBinding {
+        enabled true
+    }
+    testOptions {
+        animationsDisabled = true
+    }
+}
+
+dependencies {
+    implementation Libraries.glide
+}

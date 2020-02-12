@@ -1,0 +1,16 @@
+apply plugin: 'com.android.library'
+apply from: '../../android_core_dependencies.gradle'
+apply from: '../../android_common.gradle'
+
+dependencies {
+    implementation project(Modules.common)
+
+    implementation project(Modules.repository)
+    implementation Libraries.koin
+    implementation Libraries.koinViewModel
+
+    androidTestImplementation TestLibraries.junit
+    androidTestImplementation TestLibraries.espresso
+    androidTestImplementation TestLibraries.koin
+    testImplementation TestLibraries.junit
+}

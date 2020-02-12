@@ -11,6 +11,8 @@ object Modules {
     val remote = ":data:remote"
     val model = ":data:model"
     val repository = ":data:repository"
+
+    val featureRepos = ":features:repos"
 }
 
 object Versions {

@@ -1,2 +1,2 @@
-include ':app', ':common', ':data:remote', ':data:model', ':data:repository', ':data:local'
+include ':app', ':common', ':data:remote', ':data:model', ':data:repository', ':data:local', ':features:repos'
 rootProject.name='Starter'
